@@ -2,7 +2,7 @@
 
 # Welcome to UrbanAI 👋👮‍♂️🚦
 
-Smart City Traffic Management System - Powered by [OpenAI Swarm](https://github.com/openai/swarm) <img src="assets/bee.png" alt="Bee Image" width="30"/>
+Smart City Traffic Management System - Powered by [OpenAI Swarm](https://github.com/openai/swarm) <img src="assets/bee.png" alt="Bee Image" width="20"/>
 
 
 
