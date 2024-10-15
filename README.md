@@ -1,4 +1,4 @@
-<img src="assets/intersection.png" alt="Intersection Image" width="30"/>
+<img src="assets/intersection.png" alt="Intersection Image"/>
 
 # Welcome to UrbanAI 👋👮‍♂️🚦
 
