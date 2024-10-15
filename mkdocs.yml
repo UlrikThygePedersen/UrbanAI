@@ -1,0 +1,36 @@
+site_name: Noelle
+repo_url: https://github.com/NTTDATAInnovation/noelle
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+    - scheme: slate
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+
+nav:
+  - Introduction: README.md
+
+markdown_extensions:
+  - pymdownx.highlight:  # highlight for yaml and sql code snippets
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.superfences  # helps the extension above
+  - pymdownx.snippets:
+      check_paths: true
+
+plugins:
+  - search:
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            show_signature_annotations: true
+            show_source: true
+            show_submodules: true
