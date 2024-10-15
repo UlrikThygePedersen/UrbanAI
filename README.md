@@ -1,7 +1,6 @@
 # Welcome to UrbanAI 👋
 
-##  Smart City Traffic Management System - Powered by Swarm 
-
+Smart City Traffic Management System - Powered by Swarm 
 
 ## Overview
 
