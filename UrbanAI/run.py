@@ -1,6 +1,14 @@
 from swarm import Swarm
 from loguru import logger
 
+from agents import (
+    traffic_light_agent,
+    public_transport_agent,
+    emergency_response_agent,
+    pedestrian_flow_agent,
+    coordination_agent,
+)
+
 AGENT_TASK = "Check traffic at intersection 12"
 
 # Context variables for the task
