@@ -11,6 +11,7 @@ wheels/
 .env
 *.png
 !assets/bee.png
+!assets/intersection.png
 *.webp
 *.csv
 *.ipynb

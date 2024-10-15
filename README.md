@@ -1,3 +1,5 @@
+<img src="assets/intersection.png" alt="Intersection Image" width="30"/>
+
 # Welcome to UrbanAI 👋👮‍♂️🚦
 
 Smart City Traffic Management System - Powered by [OpenAI Swarm](https://github.com/openai/swarm) <img src="assets/bee.png" alt="Bee Image" width="30"/>
@@ -56,15 +58,6 @@ This project uses a **Swarm-based multi-agent framework** where each agent has s
 The following is an example of how the Coordination Agent interacts with the Traffic Light Control Agent to adjust traffic light timings based on vehicle density at an intersection.
 
 ```python
-# Imports
-from swarm import Swarm, Agent
-from functions import (
-    get_vehicle_count,
-    adjust_traffic_lights,
-    monitor_city_conditions,
-    coordinate_agents,
-)
-
 # Coordination Agent
 coordination_agent = Agent(
     name="Coordination Agent",
@@ -74,7 +67,6 @@ coordination_agent = Agent(
     tool_choice=None,
 )
 
-# Example conversation between agents
 client = Swarm()
 
 response = client.run(
@@ -87,3 +79,4 @@ response = client.run(
 )
 
 print(response.messages[-1]["content"])
+```
