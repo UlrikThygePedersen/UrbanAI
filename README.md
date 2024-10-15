@@ -1,6 +1,7 @@
 # Welcome to UrbanAI 👋
 
-Smart City Traffic Management System - Powered by Swarm 
+Smart City Traffic Management System - Powered by [Swarm](https://github.com/openai/swarm)
+
 
 ## Overview
 
@@ -46,12 +47,6 @@ This project uses a **Swarm-based multi-agent framework** where each agent has s
 3. **Emergency Response Agent**: Clears routes for emergency vehicles, ensuring they can navigate through traffic efficiently.
 4. **Pedestrian Flow Agent**: Manages pedestrian crossings, adjusting signal timings based on foot traffic at intersections.
 5. **Coordination Agent**: Monitors city-wide conditions and coordinates the other agents to ensure smooth operations.
-
-### Core Technologies:
-- **Python**: Core language used for building agents and business logic.
-- **Swarm Framework**: Orchestrates interactions between agents.
-- **HTTP API Integration**: Simulated or real APIs for accessing real-time city data (traffic conditions, vehicle counts, etc.).
-- **Logging with Loguru**: Comprehensive logging to track agent activities and system behavior.
 
 ---
 
