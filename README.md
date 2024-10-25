@@ -61,17 +61,23 @@ The following is an example of how the Coordination Agent interacts with the Tra
 from UrbanAI.agents import coordination_agent
 from swarm import Swarm
 
+# Set intersection to check
+INTERSECTION_TO_CHECK = 12
+
+# Instanciate the Swarm to hold agents
 client = Swarm()
 
+# Invoke the swarm og agents to check traffic at intersection
 response = client.run(
     agent=coordination_agent,
-    messages=[{"role": "user", "content": "Check traffic at intersection 12"}],
+    messages=[{"role": "user", "content": f"Check traffic at intersection {INTERSECTION_TO_CHECK}"}],
     context_variables={
-        "intersection_id": 12,  # Intersection to check
+        "intersection_id": INTERSECTION_TO_CHECK,
     },
     max_turns=3,
 )
 
+# Print the response!
 print(response.messages[-1]["content"])
 ```
 
