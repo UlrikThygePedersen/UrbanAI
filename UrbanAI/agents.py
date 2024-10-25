@@ -12,12 +12,34 @@ from functions import (
     coordinate_agents,
 )
 
+# Transfer Functions
+def transfer_to_public_transport():
+    """Transfers to the Public Transport Agent when a situation requires public transport management."""
+    return public_transport_agent
+
+def transfer_to_emergency_response():
+    """Transfers to the Emergency Response Agent when a situation requires emergency response management."""
+    return emergency_response_agent
+
+def transfer_to_pedestrian_flow():
+    """Transfers to the Pedestrian Flow Agent when a situation requires pedestrian flow management."""
+    return pedestrian_flow_agent
+
+def transfer_to_traffic_light():
+    """Transfers to the Traffic Light Control Agent when a situation requires traffic light management."""
+    return traffic_light_agent
+
+def transfer_to_coordination():
+    """Transfers to the Coordination Agent for city-wide coordination of agents."""
+    return coordination_agent
+
+
 # Traffic Light Control Agent
 traffic_light_agent = Agent(
     name="Traffic Light Control Agent",
     model="gpt-4o",
     instructions="You control the traffic lights in the city to optimize vehicle flow.",
-    functions=[get_vehicle_count, adjust_traffic_lights_using_optimization],
+    functions=[get_vehicle_count, adjust_traffic_lights_using_optimization, transfer_to_public_transport, transfer_to_coordination],
     tool_choice=None,
     """
     The Traffic Light Control Agent is responsible for adjusting traffic light timings 
@@ -33,7 +55,7 @@ public_transport_agent = Agent(
     name="Public Transport Agent",
     model="gpt-4o",
     instructions="You manage public transportation, optimizing bus and train schedules.",
-    functions=[get_bus_load, reroute_bus],
+    functions=[get_bus_load, reroute_bus, transfer_to_traffic_light, transfer_to_coordination],
     tool_choice=None,
     """
     The Public Transport Agent is tasked with managing bus and train schedules to 
@@ -51,6 +73,8 @@ emergency_response_agent = Agent(
     functions=[
         get_traffic_conditions,
         clear_path_for_emergency,
+        transfer_to_traffic_light,
+        transfer_to_coordination,
     ],
     tool_choice=None,
     """
@@ -69,6 +93,8 @@ pedestrian_flow_agent = Agent(
     functions=[
         get_pedestrian_count,
         adjust_pedestrian_crossing,
+        transfer_to_traffic_light,
+        transfer_to_coordination,
     ],
     tool_choice=None,
     """
@@ -87,6 +113,10 @@ coordination_agent = Agent(
     functions=[
         monitor_city_conditions,
         coordinate_agents,
+        transfer_to_traffic_light,
+        transfer_to_public_transport,
+        transfer_to_emergency_response,
+        transfer_to_pedestrian_flow,
     ],
     tool_choice=None,
     """
